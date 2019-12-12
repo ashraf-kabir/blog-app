@@ -2,25 +2,25 @@
 
 @section('content')
 
-@include('admin.includes.errors')
+    @include('admin.includes.errors')
 
     <div class="card">
         <div class="card-header">
-            Create a new Category
+            Update Category: {{ $categoty->name }}
         </div>
 
         <div class="card-body">
-            <form action="{{ route('category.store') }}" method="post">
+            <form action="{{ route('category.update', ['id' => $categoty->id]) }}" method="post">
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="text" name="name" class="form-control">
+                <input type="text" name="name" value="{{ $categoty->name }}" class="form-control">
                 </div>
 
                 <div class="form-group">
                     <div class="text-center">
                         <button class="btn btn-success" type="submit">
-                            Store Category
+                            Update Category
                         </button>
                     </div>
                 </div>
