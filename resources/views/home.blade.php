@@ -10,7 +10,6 @@
                     {{ session('status') }}
                 </div>
             @endif
-
             Welcome
         </div>
     </div>
