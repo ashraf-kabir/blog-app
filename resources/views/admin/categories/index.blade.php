@@ -24,12 +24,12 @@
                                 {{ $category->name }}
                             </td>
                             <td>
-                                <a href="{{ route('category.edit', ['id' => $category->id ]) }}" class="btn btn-xs btn-info">
+                                <a href="{{ route('category.edit', ['id' => $category->id ]) }}" class="btn btn-primary">
                                     Edit
                                 </a>
                             </td>
                             <td>
-                                <a href="{{ route('category.delete', ['id' => $category->id ]) }}" class="btn btn-xs btn-danger">
+                                <a href="{{ route('category.delete', ['id' => $category->id ]) }}" class="btn btn-danger">
                                     Delete
                                 </a>
                             </td>
