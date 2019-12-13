@@ -18,7 +18,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/toastr.min.css') }}" rel="stylesheet">
+    {{-- <link href="{{ asset('css/toastr.min.css') }}" rel="stylesheet"> --}}
+    @notify_css
 </head>
 <body>
     <div id="app">
@@ -76,7 +77,7 @@
         <main class="py-4">
             <div class="container">
                 <div class="row">
-                    @if(Auth::check())
+                    {{-- @if(Auth::check()) --}}
                     <div class="col-lg-4">
                         <ul class="list-group">
                             <li class="list-group-item">
@@ -93,7 +94,7 @@
                             </li>
                         </ul>
                     </div>
-                    @endif
+                    {{-- @endif --}}
                     <div class="col-lg-8">
                         @yield('content')
                     </div>
@@ -104,11 +105,13 @@
     </div>
 
     <!-- scripts -->
-    <script src="{{ asset('js/toastr.min.js') }}"></script>
+    {{-- <script src="{{ asset('js/toastr.min.js') }}"></script>
     <script>
         @if(Session::has('success'))
             toastr.success("{{ Session::get('success') }}")
         @endif
-    </script>
+    </script> --}}
 </body>
+    @notify_js
+    @notify_render
 </html>
