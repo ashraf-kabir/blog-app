@@ -40,7 +40,7 @@ class PostsController extends Controller
             'title' => 'required|max:255',
             'featured' => 'required|image',
             'content' => 'required',
-            'category_id' => 'reuired'
+            'category_id' => 'required'
         ]);
 
         dd($request->all());
