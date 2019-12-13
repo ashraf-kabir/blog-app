@@ -75,8 +75,8 @@
         <main class="py-4">
             <div class="container">
                 <div class="row">
-                   @if(Auth::check())
-                   <div class="col-lg-4">
+                    @if(Auth::check())
+                    <div class="col-lg-4">
                         <ul class="list-group">
                             <li class="list-group-item">
                                 <a href="{{ route('home') }}">Home</a>
@@ -92,7 +92,7 @@
                             </li>
                         </ul>
                     </div>
-                   @endif
+                    @endif
                     <div class="col-lg-8">
                         @yield('content')
                     </div>
