@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Session;
 use App\Post;
 use App\Category;
+use Illuminate\Support\Str;
 
 use Illuminate\Http\Request;
 
@@ -63,13 +64,14 @@ class PostsController extends Controller
             'title' => $request->title,
             'content' => $request->content,
             'featured' => 'uploads/posts/'.$featured_new_name,
-            'category_id' => $request->category_id
+            'category_id' => $request->category_id,
+            'slug' => Str::slug($request->title, '-')
         ]);
 
         Session::flash('success', 'Post created successfully');
-        //notify()->success('Post created successfully', 'Success', ['timeOut' => 3000]);
+        notify()->success('Post created successfully', 'Success', ['timeOut' => 3000]);
 
-        dd($request->all());
+        return redirect()->back();
     }
 
     /**
