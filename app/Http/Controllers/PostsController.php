@@ -59,7 +59,7 @@ class PostsController extends Controller
         ]);
 
         Session::flash('success', 'Post created successfully');
-        //notify()->success('You successfully created a category', 'Success', ['timeOut' => 3000]);
+        //notify()->success('Post created successfully', 'Success', ['timeOut' => 3000]);
 
         dd($request->all());
     }
