@@ -5,16 +5,18 @@
     <div class="card">
         <div class="card-body">
             <table class="table table-hover">
-                <thead>
-                    <th>
-                        Category Name
-                    </th>
-                    <th>
-                        Edit
-                    </th>
-                    <th>
-                        Delete
-                    </th>
+                <thead class="thead-dark">
+                    <tr>
+                        <th>
+                            Category Name
+                        </th>
+                        <th>
+                            Edit
+                        </th>
+                        <th>
+                            Delete
+                        </th>
+                    </tr>
                 </thead>
         
                 <tbody>
