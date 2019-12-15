@@ -5,6 +5,7 @@
     <div class="card">
         <div class="card-body">
             <table class="table table-hover">
+                <caption>List of categories</caption>
                 <thead class="thead-dark">
                     <tr>
                         <th>
