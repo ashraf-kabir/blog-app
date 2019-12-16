@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Tag;
 use Session;
 use App\Post;
 use App\Category;
@@ -36,7 +37,7 @@ class PostsController extends Controller
             return redirect()->back();
         }
 
-        return view('admin.posts.create')->with('categories', $categories);
+        return view('admin.posts.create')->with('categories', $categories)->with('tags', Tag::all());
     }
 
     /**
@@ -47,11 +48,13 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
+        
         $this->validate($request, [
             'title' => 'required|max:255',
             'featured' => 'required|image',
             'content' => 'required',
-            'category_id' => 'required'
+            'category_id' => 'required',
+            'tags' => 'required'
         ]);
 
         $featured = $request->featured;
@@ -67,6 +70,8 @@ class PostsController extends Controller
             'category_id' => $request->category_id,
             'slug' => Str::slug($request->title, '-')
         ]);
+
+        $post->tags()->attach($request->tags);
 
         Session::flash('success', 'Post created successfully');
         notify()->success('Post created successfully', 'Success', ['timeOut' => 3000]);
@@ -177,7 +182,7 @@ class PostsController extends Controller
         
         $post->restore();
 
-        Session::flash('success', 'Post restored permanesuccessfullyntly');
+        Session::flash('success', 'Post restored successfully');
         notify()->success('Post restored successfully', 'Success', ['timeOut' => 3000]);
 
         return redirect()->route('posts');

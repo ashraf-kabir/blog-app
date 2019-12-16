@@ -11,6 +11,10 @@
 |
 */
 
+Route::get('/test', function() {
+    return App\Post::find(4)->tags;
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
