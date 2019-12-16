@@ -36,7 +36,7 @@
                                 Edit
                             </td>
                             <td>
-                                Delete
+                                <a href="{{ route('post.delete', ['id' => $post->id]) }}" class="btn btn-danger btn-sm">Trash</a>
                             </td>
                         </tr>
                     @endforeach
