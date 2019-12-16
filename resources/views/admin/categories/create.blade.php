@@ -6,7 +6,7 @@
 
     <div class="card">
         <div class="card-header">
-            Create a new Category
+            Create a new category
         </div>
 
         <div class="card-body">
