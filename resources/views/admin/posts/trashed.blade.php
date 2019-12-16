@@ -3,9 +3,12 @@
 @section('content')
 
     <div class="card">
+        <div class="card-header">
+            Trashed Posts
+        </div>
         <div class="card-body">
             <table class="table table-hover">
-                <caption>List of posts</caption>
+                <caption>List of trashed posts</caption>
                 <thead class="thead-dark">
                     <tr>
                         <th>
@@ -27,7 +30,8 @@
                 </thead>
         
                 <tbody>
-                    @foreach($posts as $post)
+                    @if ($posts->count() > 0)
+                        @foreach($posts as $post)
                         <tr>
                             <td>
                                 <img src="{{ $post->featured }}" alt="{{ $post->title }}" width="70" height="35">
@@ -45,7 +49,13 @@
                                 <a href="{{ route('post.kill', ['id' => $post->id]) }}" class="btn btn-danger btn-sm">Delete</a>
                             </td>
                         </tr>
-                    @endforeach
+                        @endforeach
+                    @else
+                        <tr>
+                            <th colspan="5" class="text-center">No trashed post</th>
+                        </tr>
+                    @endif
+
                 </tbody>
             </table>
         </div>
