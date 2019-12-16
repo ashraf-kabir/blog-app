@@ -130,7 +130,6 @@ class PostsController extends Controller
         $posts = Post::onlyTrashed()->get();
         
         return view('admin.posts.trashed')->with('posts', $posts);
-
     }
 
     public function kill($id) {
@@ -142,7 +141,17 @@ class PostsController extends Controller
         notify()->success('Post deleted permanently', 'Success', ['timeOut' => 3000]);
 
         return redirect()->back();
+    }
+
+    public function restore($id) {
+        $post = Post::withTrashed()->where('id', $id)->first();
         
+        $post->restore();
+
+        Session::flash('success', 'Post restored permanesuccessfullyntly');
+        notify()->success('Post restored successfully', 'Success', ['timeOut' => 3000]);
+
+        return redirect()->route('posts');
     }
 
 
