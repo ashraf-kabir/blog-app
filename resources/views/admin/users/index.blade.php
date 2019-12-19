@@ -4,49 +4,53 @@
 
     <div class="card">
         <div class="card-header">
-            Published posts
+            Users
         </div>
         <div class="card-body">
             <table class="table table-hover">
-                <caption>List of posts</caption>
+                <caption>List of users</caption>
                 <thead class="thead-dark">
                     <tr>
                         <th>
                             Image
                         </th>
                         <th>
-                            Title
+                            Name
                         </th>
                         <th>
-                            Edit
+                            Permissions
                         </th>
                         <th>
-                            Trash
+                            Delete
                         </th>
                     </tr>
                 </thead>
         
                 <tbody>
-                    @if ($posts->count() > 0)
-                        @foreach($posts as $post)
+                    @if ($users->count() > 0)
+                        @foreach($users as $user)
                             <tr>
                                 <td>
-                                    <img src="{{ $post->featured }}" alt="{{ $post->title }}" width="70" height="35">
+                                    <img src="{{ asset($user->profile->avatar) }}" alt="" width="40" height="40" style="border-radius: 50%;">
                                 </td>
                                 <td>
-                                    {{ $post->title }}
+                                    {{ $user->name }}
                                 </td>
                                 <td>
-                                    <a href="{{ route('post.edit', ['id' => $post->id]) }}" class="btn btn-primary btn-sm">Edit</a>
+                                    @if ($user->admin)
+                                    <a href="{{ route('user.not.admin', ['id' => $user->id]) }}" class="btn btn-sm btn-danger">Remove Permissions</a>
+                                    @else
+                                        <a href="{{ route('user.admin', ['id' => $user->id]) }}" class="btn btn-sm btn-success">Make Admin</a>
+                                    @endif
                                 </td>
                                 <td>
-                                    <a href="{{ route('post.delete', ['id' => $post->id]) }}" class="btn btn-danger btn-sm">Trash</a>
+                                    Delete
                                 </td>
                             </tr>
                         @endforeach
                     @else
                         <tr>
-                            <th colspan="5" class="text-center">No posts found</th>
+                            <th colspan="5" class="text-center">No users found</th>
                         </tr>
                     @endif
                 </tbody>
