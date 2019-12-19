@@ -106,6 +106,10 @@ class CategoriesController extends Controller
     {
         $category = Category::find($id);
 
+        foreach ($category->posts as $post) {
+            $post->forceDelete();
+        }
+
         $category->delete();
 
         notify()->success('You successfully deleted the category', 'Success', ['timeOut' => 3000]);

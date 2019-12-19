@@ -31,13 +31,15 @@ class PostsController extends Controller
     {
         $categories = Category::all();
 
-        if ($categories->count() == 0) {
-            Session::flash('success', 'You must have some categories!');
-            notify()->info('You must have some categories!');
+        $tags = Tag::all();
+
+        if ($categories->count() == 0 || $tags->count() == 0) {
+            Session::flash('success', 'You must have some categories & tags first!');
+            notify()->info('You must have some categories & tags first!');
             return redirect()->back();
         }
 
-        return view('admin.posts.create')->with('categories', $categories)->with('tags', Tag::all());
+        return view('admin.posts.create')->with('categories', $categories)->with('tags', $tags);
     }
 
     /**
