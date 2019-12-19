@@ -105,7 +105,17 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::find($id);
+
+        $user->profile->delete();
+
+        $user->delete();
+
+        Session::flash('success', 'User deleted forever');
+        notify()->success('User created forever', 'Success', ['timeOut' => 3000]);
+
+        return redirect()->route('users');
+
     }
 
     public function admin($id) {
