@@ -3,7 +3,7 @@
         <div class="header-content-wrapper">
             <div class="logo">
                 <div class="logo-text">
-                    <div class="logo-title">{{ $settings->site_name }}</div>
+                    <a href="{{ route('index') }}" class="logo-title">{{ $settings->site_name }}</a>
                 </div>
             </div>
 
