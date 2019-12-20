@@ -125,7 +125,7 @@
     
                     </div>
     
-                    <div class="comments">
+                    <div class="comments" style="padding-bottom: 60px;">
     
                         <div class="heading text-center">
                             <h4 class="h1 heading-title">Comments</h4>
@@ -146,7 +146,7 @@
     
                 <div class="col-lg-12">
                     <aside aria-label="sidebar" class="sidebar sidebar-right">
-                        <div  class="widget w-tags">
+                        <div class="widget w-tags">
                             <div class="heading text-center">
                                 <h4 class="heading-title">ALL BLOG TAGS</h4>
                                 <div class="heading-line">
