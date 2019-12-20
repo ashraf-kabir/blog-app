@@ -25,6 +25,11 @@ Route::get('/post/{slug}', [
     'as' => 'post.single'
 ]);
 
+Route::get('/category/{id}', [
+    'uses' => 'FrontEndController@category',
+    'as' => 'category.single'
+]);
+
 Auth::routes();
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
