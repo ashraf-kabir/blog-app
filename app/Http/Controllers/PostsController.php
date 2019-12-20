@@ -78,7 +78,7 @@ class PostsController extends Controller
         Session::flash('success', 'Post created successfully');
         notify()->success('Post created successfully', 'Success', ['timeOut' => 3000]);
 
-        return redirect()->back();
+        return redirect()->route('posts');
     }
 
     /**

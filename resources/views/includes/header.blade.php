@@ -3,7 +3,7 @@
         <div class="header-content-wrapper">
             <div class="logo">
                 <div class="logo-text">
-                    <div class="logo-title">LARAVEL'S BLOG</div>
+                    <div class="logo-title">{{ $title }}</div>
                 </div>
             </div>
 
@@ -18,21 +18,11 @@
                     </span>
                 </a>
                 <ul class="primary-menu-menu" style="overflow: hidden;">
-                    <li class="">
-                        <a href="">NEWS</a>
-                    </li>
-                    <li class="">
-                        <a href="">VIDEOS</a>
-                    </li>
-                    <li class="">
-                        <a href="">DISCUSSIONS</a>
-                    </li>
-                    <li class="">
-                        <a href="">TUTORIALS</a>
-                    </li>
-                    <li class="">
-                        <a href="">NEWSLETTER</a>
-                    </li>
+                    @foreach ($categories as $category)
+                        <li>
+                            <a href="">{{ $category->name }}</a>
+                        </li>
+                    @endforeach
                 </ul>
             </nav>
             <ul class="nav-add">
