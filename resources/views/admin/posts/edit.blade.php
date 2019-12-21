@@ -52,7 +52,7 @@
 
                 <div class="form-group">
                     <label for="content">Content</label>
-                    <textarea name="content" cols="5" rows="5" class="form-control">{{ $post->content }}</textarea>
+                    <textarea class="content" name="content" cols="5" rows="5" class="form-control">{{ $post->content }}</textarea>
                 </div>
 
                 <div class="form-group">

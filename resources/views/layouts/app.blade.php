@@ -146,6 +146,14 @@
             toastr.success("{{ Session::get('success') }}")
         @endif
     </script> --}}
+    <script src="{{ asset('node_modules/tinymce/tinymce.js') }}"></script>
+    <script>
+        tinymce.init({
+            selector:'textarea.content',
+            width: 680,
+            height: 300
+        });
+    </script>
 </body>
     @notify_js
     @notify_render
