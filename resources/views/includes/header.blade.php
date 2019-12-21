@@ -23,6 +23,9 @@
                             <a href="{{ route('category.single', ['id' => $category->id]) }}">{{ $category->name }}</a>
                         </li>
                     @endforeach
+                    <li>
+                        <a href="{{ route('login') }}" style="font-weight: bold;">Login</a>
+                    </li>
                 </ul>
             </nav>
             <ul class="nav-add">
