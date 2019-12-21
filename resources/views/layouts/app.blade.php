@@ -99,22 +99,22 @@
                             @else
                             @endif
                             <li class="list-group-item">
-                                <a href="{{ route('user.profile') }}">My profile</a>
+                                <a href="{{ route('user.profile') }}">My Profile</a>
                             </li>
                             <li class="list-group-item">
-                                <a href="{{ route('tag.create') }}">Create new tag</a>
+                                <a href="{{ route('tag.create') }}">Create New Tag</a>
                             </li>
                             <li class="list-group-item">
                                 <a href="{{ route('posts') }}">All Posts</a>
                             </li>
                             <li class="list-group-item">
-                                <a href="{{ route('posts.trashed') }}">All trashed posts</a>
+                                <a href="{{ route('posts.trashed') }}">All Trashed Posts</a>
                             </li>
                             <li class="list-group-item">
-                                <a href="{{ route('category.create') }}">Create new category</a>
+                                <a href="{{ route('category.create') }}">Create New Category</a>
                             </li>
                             <li class="list-group-item">
-                                <a href="{{ route('post.create') }}">Create new post</a>
+                                <a href="{{ route('post.create') }}">Create New Post</a>
                             </li>
                             @if (Auth::user()->admin)
                                 <li class="list-group-item">
