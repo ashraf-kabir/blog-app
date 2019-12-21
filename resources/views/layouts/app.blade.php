@@ -150,7 +150,7 @@
     <script>
         tinymce.init({
             selector:'textarea.content',
-            width: 680,
+            width: 685,
             height: 300
         });
     </script>
