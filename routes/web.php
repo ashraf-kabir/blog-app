@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/test', function() {
-    return App\User::find(1)->profile;
-});
+// Route::get('/test', function() {
+//     return App\User::find(1)->profile;
+// });
 
 Route::get('/', [
     'uses' => 'FrontEndController@index',
