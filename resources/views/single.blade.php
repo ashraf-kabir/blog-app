@@ -26,9 +26,16 @@
                                 <div class="post__author author vcard">
                                     Posted by
     
-                                    <div class="post__author-name fn">
-                                        <a href="#" class="post__author-link">{{ $post->user->name }}</a>
-                                    </div>
+                                    @if ($post->user->admin === 1)
+                                        <div class="post__author-name fn">
+                                            <a href="#" class="post__author-link">{{ $post->user->name }}, <em>Admin</em></a>
+                                        </div>
+                                    @else
+                                        <div class="post__author-name fn">
+                                            <a href="#" class="post__author-link">{{ $post->user->name }}</a>
+                                        </div>
+                                    @endif
+
     
                                 </div>
     
