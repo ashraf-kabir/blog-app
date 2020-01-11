@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="form_search-wrap">
-                <form method="GET" action="/results">
+                <form method="GET" action="../results">
                     <input class="overlay_search-input" name="query" placeholder="Type and hit enter..." type="text">
                     <a href="#" class="overlay_search-close">
                         <span></span>
