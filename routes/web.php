@@ -51,6 +51,8 @@ Auth::routes([
     'verify' => false, // Email Verification Routes...
 ]);
 
+// Auth::routes();
+
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 
     Route::get('/dashboard', [
