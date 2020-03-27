@@ -45,7 +45,11 @@ Route::get('/tag/{id}', [
     'as' => 'tag.single'
 ]);
 
-Auth::routes();
+Auth::routes([
+    'register' => false, // Registration Routes...
+    'reset' => false, // Password Reset Routes...
+    'verify' => false, // Email Verification Routes...
+]);
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 
